@@ -1,0 +1,31 @@
+{
+  "name": "gentoken",
+  "description": "GenToken is a pseudo-random string token generator.",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "postinstall": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaynlink/gentoken.git"
+  },
+  "keywords": [
+    "generator",
+    "token",
+    "password"
+  ],
+  "author": "shaynlink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaynlink/gentoken/issues"
+  },
+  "homepage": "https://github.com/shaynlink/gentoken#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
