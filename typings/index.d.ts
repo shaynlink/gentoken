@@ -3,7 +3,7 @@
  * Default length is undefined.
  * @param {?string} [prefix='']
  * @param {?string} [suffix='']
- * @param {?number} [fixedLength=undefined]
+ * @param {?number} [fixedLength=10]
  * @return {string}
  *
  * @example
@@ -14,6 +14,7 @@
  *
  * console.log(token1 == token2); // false
  */
-declare function generateToken(prefix?: string, suffix?: string, fixedLength?: number | undefined): IterableIterator<string>;
-export default generateToken;
+declare function _generateToken(prefix?: string, suffix?: string, fixedLength?: number): IterableIterator<string>;
+export declare const generateToken: typeof _generateToken;
+export default _generateToken;
 //# sourceMappingURL=index.d.ts.map

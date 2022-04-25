@@ -8,7 +8,18 @@
   },
   "scripts": {
     "test": "jest",
-    "postinstall": "tsc --build"
+    "build": "tsc --build",
+    "postinstall": "npm run-script build"
+  },
+  "exports": {
+    ".": {
+      "browser": {
+        "default": "./dist/index.js",
+        "import": "./dist/index.js",
+        "node": "./dist/index.js",
+        "require": "./dist/index.js"
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -26,6 +37,9 @@
   },
   "homepage": "https://github.com/shaynlink/gentoken#readme",
   "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
   }
 }
