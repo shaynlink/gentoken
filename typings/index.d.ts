@@ -5,7 +5,7 @@
  * @param {?string} [prefix=''] Prefix of the token.
  * @param {?string} [suffix=''] Suffix of the token.
  * @param {?number} [fixedLength=10] Fixed length of the token between 1 and 10.
- * @return {string}
+ * @return {IterableIterator<string>}
  *
  * @example
  * const tokenizer = generateToken();
