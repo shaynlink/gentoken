@@ -1,5 +1,5 @@
 {
-  "name": "gentoken",
+  "name": "@shaynlink/gentoken",
   "description": "GenToken is a pseudo-random string token generator.",
   "version": "1.0.0",
   "main": "dist/index.js",
