@@ -3,13 +3,15 @@
   "description": "GenToken is a pseudo-random string token generator.",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "types": "./typings/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "jest",
     "build": "tsc --build",
-    "postinstall": "npm run-script build"
+    "generate-doc": "node doc.js",
+    "prepublish": "npm run-script test && npm run-script build && npm run-script generate-doc"
   },
   "exports": {
     ".": {
@@ -18,12 +20,19 @@
         "import": "./dist/index.js",
         "node": "./dist/index.js",
         "require": "./dist/index.js"
-      }
+      },
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "node": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shaynlink/gentoken.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "generator",
@@ -38,6 +47,7 @@
   "homepage": "https://github.com/shaynlink/gentoken#readme",
   "devDependencies": {
     "@types/jest": "^27.4.1",
+    "docma": "^3.2.2",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
