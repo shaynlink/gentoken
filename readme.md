@@ -4,7 +4,7 @@ package-less, it using no one external package.
 
 # Install
 ```bash
-npm i gentoken
+npm i shaynlink/gentoken
 ```
 
 # Usage
