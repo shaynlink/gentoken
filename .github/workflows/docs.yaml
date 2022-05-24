@@ -24,10 +24,9 @@ jobs:
       run: |
           npm install
           npm run generate-doc
-    - name: Select main branch 
-      run: git config --global init.defaultBranch main
     - name: Publish
-      uses: maxheld83/ghpages@v0.3.0
+      uses: shaynlink/ghpages@v0.3.0
       env:
         GH_PAT: ${{ secrets.ACCESS_TOKEN }}
         BUILD_DIR: docs/
+        BRANCH: main
