@@ -12,25 +12,26 @@ npm i shaynlink/gentoken
 Javascript
 ```javascript
 // commonJS
-const {generateToken} = require('gentoken');
+const {generateToken} = require('@shaynlink/gentoken');
+// const generateToken = require('@shaynlink/gentoken').default;
 
 const generator = generateToken();
 
 const token = generator.next().value;
 
 // ecmaScript
-import generateToken from 'gentoken';
+import generateToken from '@shaynlink/gentoken';
 
-const generator = genToken();
+const generator = generateToken();
 
 const token = generator.next().value;
 ```
 
 Typescript
 ```typescript
-import generator from 'gentoken';
+import generateToken from '@shaynlink/gentoken';
 
-const generator: IterableIterator<string> = genToken();
+const generator: IterableIterator<string> = generateToken();
 
 const token: string = generator.next().value;
 ```
