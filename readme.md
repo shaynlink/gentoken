@@ -36,6 +36,46 @@ const generator: IterableIterator<string> = generateToken();
 const token: string = generator.next().value;
 ```
 
+# Example
+CLI Generate ID
+```js
+const readline = require('node:readline');
+const { stdin: input, stdout: output, argv } = require('node:process');
+const {generateToken} = require('@shaynlink/gentoken');
+const rl = readline.createInterface({ input, output });
+
+const args = () => {
+    const {prefix = '', suffix = ''} = Object.fromEntries(
+        argv.map((arg) => arg.split('='))
+    )
+    if (length < 1 || length > 10) throw Error('Can\'t generate length with length < 1 or length > 10');
+    return [prefix, suffix]
+}
+
+const genToken = generateToken(...args());
+
+function generateID() {
+    const id = genToken.next().value;
+    console.log('Your id is [ %s ]', id);
+    rl.question('Do you whant another ID ? [yes/no] ', (answer) => {
+        if (answer == 'yes') {
+          generateID();
+        } else {
+            console.log('Goodbye !');
+            rl.close();
+        }
+    });
+}
+generateID();
+
+/** Terminal example
+* [👩] > node example.js prefix=id_ length=10 suffix=_done
+* [🤖] > Your id is [ id_ygx4snplww_done ]
+* [🤖] > Do you whant another ID ? [yes/no]
+* [👩] > no
+* [🤖] > Goodbye !
+```
+
 # License
 MIT License
 
