@@ -37,6 +37,25 @@ const token: string = generator.next().value;
 ```
 
 # Example
+### Sample id generator
+```js
+const {generateToken} = require('@shaynlink/gentoken');
+
+const genToken =  generateToken()
+
+class ExampleUser {
+    constructor() {
+        this.id = genToken.next().value
+    }
+}
+
+const userA = new ExampleUser();
+const userB = new ExampleUser();
+
+console.log('has equal id ? : %s', userA.id == userB.id); // has equal id ? : false
+console.log(userA.id, userB.id); // zpdon9dddz tusnk68t02
+```
+
 ### ⚠️ Infinite token generator
 ```js
 const {generateToken} = require('@shaynlink/gentoken');
