@@ -37,7 +37,19 @@ const token: string = generator.next().value;
 ```
 
 # Example
-CLI Generate ID
+### ⚠️ Infinite token generator
+```js
+const {generateToken} = require('@shaynlink/gentoken');
+
+const genToken =  generateToken()
+
+// Infinite token generation
+for (const token of genToken) {
+    console.log(token);
+}
+```
+
+### CLI Generate ID
 ```js
 const readline = require('node:readline');
 const { stdin: input, stdout: output, argv } = require('node:process');
